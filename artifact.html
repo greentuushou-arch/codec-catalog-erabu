@@ -10,6 +10,7 @@
     --gold:#ECC501;
     --gold-deep:#C7A400;
     --red:#B60F00;
+    --rose:#C43B4E;
     --line:rgba(33,29,22,0.14);
     --white:#FFFFFF;
   }
@@ -158,6 +159,22 @@
     letter-spacing:.08em;
     margin:0 0 18px;
   }
+  .bvc-reco{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px 16px;
+    background:rgba(182,15,0,.06);
+    border-left:2px solid var(--rose);
+    margin-bottom:20px;
+  }
+  .bvc-reco svg{flex:none;width:26px;height:26px;stroke:var(--rose);}
+  .bvc-reco span{
+    font-size:13.5px;
+    letter-spacing:.05em;
+    font-weight:700;
+    color:var(--rose);
+  }
   .bvc-col p{
     font-size:15px;
     letter-spacing:.06em;
@@ -251,6 +268,56 @@
   }
   .table-wrap{overflow-x:auto;}
   .scroll-hint{display:none;font-size:11.5px;letter-spacing:.1em;color:rgba(33,29,22,.45);margin:10px 2px 0;}
+
+  /* ---------- budget: mobile stacked list ---------- */
+  .budget-mobile{display:none;}
+  .budget-mobile .tier{padding:22px 0;border-bottom:1px solid var(--line);}
+  .budget-mobile .tier-price{
+    font-family:"Poppins",sans-serif;
+    font-weight:700;
+    font-size:19px;
+    letter-spacing:.02em;
+    margin-bottom:14px;
+    font-variant-numeric:tabular-nums;
+  }
+  .budget-mobile .tier-formats{display:flex;flex-direction:column;gap:10px;}
+  .budget-mobile .format-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:10px;
+    background:var(--paper);
+  }
+  .budget-mobile .format-row img{width:60px;height:60px;object-fit:cover;flex:none;}
+  .budget-mobile .format-row .flabel{
+    font-family:"Poppins",sans-serif;
+    font-size:10px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    display:block;
+    margin-bottom:4px;
+  }
+  .budget-mobile .format-row .fname{
+    font-size:12.5px;
+    letter-spacing:.03em;
+    color:rgba(33,29,22,.6);
+    display:block;
+    margin-bottom:2px;
+  }
+  .budget-mobile .format-row .fyen{
+    font-family:"Poppins",sans-serif;
+    font-weight:600;
+    font-size:16px;
+    font-variant-numeric:tabular-nums;
+  }
+  .budget-mobile .format-row.empty{
+    background:transparent;
+    color:rgba(33,29,22,.35);
+    font-size:12.5px;
+    letter-spacing:.05em;
+    padding:10px 2px;
+  }
   .extra-note{
     margin-top:54px;
     padding-top:40px;
@@ -399,12 +466,13 @@
     .fv-photos{grid-template-columns:1fr 1fr;}
     .bvc-grid{grid-template-columns:1fr;gap:48px;}
     .bvc-col:nth-child(2){margin-top:0;}
-    table.budget-table{font-size:13px;}
-    .item-cell img{width:44px;height:44px;}
-    .scroll-hint{display:block;}
     .taste-grid{grid-template-columns:repeat(2,1fr);}
     .taste-card.wide{grid-column:span 2;}
     .reassure .wrap{grid-template-columns:1fr;gap:36px;}
+  }
+  @media (max-width:640px){
+    .table-wrap,.scroll-hint{display:none;}
+    .budget-mobile{display:block;}
   }
 </style>
 
@@ -448,12 +516,20 @@
         <div class="photo"><img src="images/book-catalog10800.jpg" alt="冊子タイプ カタログギフト"></div>
         <span class="en">01 — BOOK TYPE</span>
         <h3>冊子タイプ</h3>
+        <div class="bvc-reco">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5c2.2-.8 5-.8 8 .8V19c-3-1.6-5.8-1.6-8-.8V5.5z"/><path d="M20 5.5c-2.2-.8-5-.8-8 .8V19c3-1.6 5.8-1.6 8-.8V5.5z"/></svg>
+          <span>年配の方への内祝い・香典返しに、安心のかたち</span>
+        </div>
         <p>ページをめくる、あの実感。見慣れているかたちだから、贈る側も選びやすく、受け取った方にも「ちゃんとしたお返し」という気持ちが伝わります。年配の方への内祝いや香典返しにも、安心して選べる定番です。</p>
       </div>
       <div class="bvc-col">
         <div class="photo"><img src="images/card-catalog10800_cd.jpg" alt="カード型 カタログギフト"></div>
         <span class="en">02 — CARD TYPE</span>
         <h3>カード型</h3>
+        <div class="bvc-reco">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="3" width="10" height="18" rx="2"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+          <span>一人暮らしの方・身軽に渡したい方に、コンパクトなかたち</span>
+        </div>
         <p>コンパクトで、軽い。荷物にならないから、手渡しにもぴったりです。届いたあとはスマホでゆっくり、好きな時間にお店を選べます。一人暮らしの方や、身軽に贈りたいときに。</p>
       </div>
     </div>
@@ -486,6 +562,7 @@
       </table>
     </div>
     <p class="scroll-hint en">SWIPE TO SEE MORE →</p>
+    <div class="budget-mobile" id="budget-mobile"></div>
 
     <p class="table-note">※価格は2026年9月時点の割引後の実売価格（税込）です。一部コースは別途送料550円がかかります。最新の価格・在庫は各商品ページでご確認ください。</p>
 
@@ -573,6 +650,28 @@ document.getElementById('budget-tbody').innerHTML = BUDGET.map(row => `
     <td>${cell(row.book)}</td>
     <td>${cell(row.card)}</td>
   </tr>
+`).join('');
+
+function mobileRow(label, item){
+  if(!item) return `<div class="format-row empty">${label}はこの価格帯にありません</div>`;
+  return `<a class="format-row" href="${item.url}" target="_blank" rel="noopener">
+    <img src="${item.img}" alt="${item.name}">
+    <span class="meta">
+      <span class="flabel en">${label}</span>
+      <span class="fname en">${item.name}</span>
+      <span class="fyen en">${item.yen}</span>
+    </span>
+  </a>`;
+}
+
+document.getElementById('budget-mobile').innerHTML = BUDGET.map(row => `
+  <div class="tier">
+    <div class="tier-price en">${row.price}</div>
+    <div class="tier-formats">
+      ${mobileRow('冊子タイプ', row.book)}
+      ${mobileRow('カード型', row.card)}
+    </div>
+  </div>
 `).join('');
 
 const TASTE = [
