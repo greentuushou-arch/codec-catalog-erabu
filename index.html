@@ -359,6 +359,8 @@
     transition:transform .5s ease;
   }
   .taste-card:hover img{transform:scale(1.05);}
+  .taste-card.tl-card img{object-position:58% 78%;transform:scale(1.28);}
+  .taste-card.tl-card:hover img{transform:scale(1.34);}
   .taste-card .cap{
     position:absolute;left:0;right:0;bottom:0;
     padding:16px 18px 14px;
@@ -708,7 +710,7 @@ const TASTE = [
   {brand:"tower", desc:"山崎実業・雑貨カード型", price:"3,630円〜", img:"images/brand-tower.jpg", url:"https://item.rakuten.co.jp/patie/cat-tower-001/"},
   {brand:"JILLSTUART", desc:"コスメ・カード型", price:"4,290円〜", img:"images/brand-jillstuart.jpg", url:"https://item.rakuten.co.jp/patie/cat-jill-002/"},
   {brand:"ANA's FRESH SELECTION", desc:"グルメ・カード型", price:"5,500円〜", img:"images/brand-ana.jpg", url:"https://item.rakuten.co.jp/patie/cat-anacard-002/"},
-  {brand:"高島屋 ローズガーデン", desc:"百貨店セレクト・冊子", price:"3,190円〜", img:"images/brand-takashimaya.jpg", url:"https://item.rakuten.co.jp/patie/cat-rose-001/", wide:true},
+  {brand:"高島屋 ローズガーデン", desc:"百貨店セレクト・冊子", price:"3,190円〜", img:"images/brand-takashimaya.jpg", url:"https://item.rakuten.co.jp/patie/cat-rose-001/", wide:true, cls:"tl-card"},
   {brand:"ディズニー SMILE", desc:"リンベル・冊子", price:"4,290円〜", img:"images/brand-disney-smile.jpg", url:"https://item.rakuten.co.jp/patie/cat_disney_001/"},
   {brand:"T-fal", desc:"家電・実用派カード型", price:"11,880円〜", img:"images/brand-tfal.jpg", url:"https://item.rakuten.co.jp/patie/cat-tfal-003/"},
   {brand:"生活の木", desc:"アロマ・カード型", price:"5,280円〜", img:"images/brand-tol.jpg", url:"https://item.rakuten.co.jp/patie/cat-tol-003/"},
@@ -720,7 +722,7 @@ const TASTE = [
 ];
 
 document.getElementById('taste-grid').innerHTML = TASTE.map(t => `
-  <a class="taste-card${t.wide?' wide':''}" href="${t.url}" target="_blank" rel="noopener">
+  <a class="taste-card${t.wide?' wide':''}${t.cls?' '+t.cls:''}" href="${t.url}" target="_blank" rel="noopener">
     <img src="${t.img}" alt="${t.brand}">
     <span class="cap">
       <span class="brand">${t.brand}</span>
