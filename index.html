@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コードシー カタログギフト選び方ガイド</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#211d16;
+    --paper:#FBF7EE;
+    --paper-deep:#F3ECD9;
+    --gold:#ECC501;
+    --gold-deep:#C7A400;
+    --red:#B60F00;
+    --line:rgba(33,29,22,0.14);
+    --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Zen Kaku Gothic New","Poppins",sans-serif;
+    letter-spacing:.06em;
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  .en{font-family:"Poppins",sans-serif;letter-spacing:.02em;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  .kicker{
+    font-family:"Poppins",sans-serif;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+  }
+  .section-head{margin:0 0 56px;}
+  .section-head h2{
+    font-size:clamp(30px,4.2vw,46px);
+    font-weight:900;
+    margin:14px 0 20px;
+    letter-spacing:.08em;
+    line-height:1.5;
+  }
+  .section-head p{
+    font-size:15px;
+    max-width:640px;
+    color:rgba(33,29,22,.78);
+    letter-spacing:.07em;
+  }
+  section{padding:100px 0;}
+  .divider{
+    height:1px;
+    background:var(--line);
+    max-width:1180px;
+    margin:0 auto;
+  }
+
+  /* ---------- header ---------- */
+  header.site{
+    padding:22px 0;
+    border-bottom:1px solid var(--line);
+    background:var(--paper);
+  }
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;}
+  header.site img{height:34px;width:auto;}
+  header.site .tag{
+    font-size:11px;
+    letter-spacing:.18em;
+    color:rgba(33,29,22,.6);
+  }
+
+  /* ---------- top banner ---------- */
+  .top-banner{background:var(--gold);}
+  .top-banner img{width:100%;height:auto;display:block;}
+  .top-banner-link{
+    text-align:center;
+    padding:12px 0;
+    background:var(--ink);
+  }
+  .top-banner-link a{
+    color:var(--paper);
+    font-size:12px;
+    letter-spacing:.18em;
+  }
+
+  /* ---------- FV ---------- */
+  .fv{
+    position:relative;
+    background:var(--gold);
+    padding:120px 0 0;
+    overflow:hidden;
+  }
+  .fv::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image:radial-gradient(rgba(255,255,255,.55) 6px, transparent 7px);
+    background-size:46px 46px;
+    opacity:.35;
+    pointer-events:none;
+  }
+  .fv-inner{position:relative;max-width:1180px;margin:0 auto;padding:0 28px;}
+  .fv .kicker{color:rgba(33,29,22,.62);}
+  .fv h1{
+    font-size:clamp(40px,6.4vw,84px);
+    font-weight:900;
+    line-height:1.28;
+    letter-spacing:.05em;
+    margin:22px 0 34px;
+  }
+  .fv-note{
+    font-size:14.5px;
+    letter-spacing:.07em;
+    max-width:520px;
+    color:rgba(33,29,22,.82);
+    margin-bottom:16px;
+  }
+  .fv-flag{
+    display:inline-block;
+    font-family:"Poppins",sans-serif;
+    font-size:11.5px;
+    letter-spacing:.16em;
+    color:var(--white);
+    background:var(--ink);
+    padding:8px 16px;
+    margin-bottom:64px;
+  }
+  .fv-photos{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:2px;
+  }
+  .fv-photos img{width:100%;height:100%;object-fit:cover;aspect-ratio:1/1;}
+
+  /* ---------- book vs card ---------- */
+  .bvc{background:var(--paper);}
+  .bvc-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:64px;
+    align-items:start;
+  }
+  .bvc-col .photo{
+    aspect-ratio:1/1;
+    overflow:hidden;
+    margin-bottom:28px;
+  }
+  .bvc-col .photo img{width:100%;height:100%;object-fit:cover;}
+  .bvc-col .en{
+    font-size:12px;
+    letter-spacing:.28em;
+    color:var(--gold-deep);
+    display:block;
+    margin-bottom:10px;
+  }
+  .bvc-col h3{
+    font-size:26px;
+    font-weight:700;
+    letter-spacing:.08em;
+    margin:0 0 18px;
+  }
+  .bvc-col p{
+    font-size:15px;
+    letter-spacing:.06em;
+    color:rgba(33,29,22,.82);
+    margin:0;
+  }
+  .bvc-col:nth-child(2){margin-top:72px;}
+  .bvc-conclusion{
+    margin-top:80px;
+    padding-top:56px;
+    border-top:1px solid var(--line);
+    text-align:center;
+  }
+  .bvc-conclusion .line1{
+    font-size:clamp(22px,3vw,32px);
+    font-weight:900;
+    letter-spacing:.1em;
+    margin-bottom:14px;
+  }
+  .bvc-conclusion .line2{
+    font-size:15px;
+    letter-spacing:.08em;
+    color:rgba(33,29,22,.78);
+  }
+
+  /* ---------- budget table ---------- */
+  .budget{background:var(--paper-deep);}
+  table.budget-table{
+    width:100%;
+    min-width:640px;
+    border-collapse:collapse;
+  }
+  table.budget-table th{
+    text-align:left;
+    font-family:"Poppins",sans-serif;
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:rgba(33,29,22,.55);
+    font-weight:500;
+    padding:0 14px 16px;
+    border-bottom:2px solid var(--ink);
+  }
+  table.budget-table td{
+    padding:18px 14px;
+    border-bottom:1px solid var(--line);
+    vertical-align:middle;
+    font-size:14.5px;
+    letter-spacing:.05em;
+  }
+  table.budget-table tr:hover td{background:rgba(236,197,1,.16);}
+  .price-col{
+    font-family:"Poppins",sans-serif;
+    font-weight:600;
+    font-size:16px;
+    letter-spacing:.02em;
+    white-space:nowrap;
+    position:sticky;
+    left:0;
+    background:var(--paper-deep);
+    z-index:1;
+  }
+  .item-cell{display:flex;align-items:center;gap:14px;}
+  .item-cell img{
+    width:56px;height:56px;object-fit:cover;flex:none;
+  }
+  .item-cell .meta .name{
+    display:block;
+    font-size:13px;
+    letter-spacing:.04em;
+    color:rgba(33,29,22,.6);
+    margin-bottom:3px;
+    white-space:nowrap;
+  }
+  .item-cell .meta .yen{
+    font-family:"Poppins",sans-serif;
+    font-weight:600;
+    font-size:16px;
+    white-space:nowrap;
+  }
+  .item-cell.empty{color:rgba(33,29,22,.32);font-size:13px;letter-spacing:.06em;}
+  .table-note{
+    margin-top:28px;
+    font-size:12.5px;
+    letter-spacing:.05em;
+    color:rgba(33,29,22,.55);
+    line-height:1.9;
+  }
+  .table-wrap{overflow-x:auto;}
+  .scroll-hint{display:none;font-size:11.5px;letter-spacing:.1em;color:rgba(33,29,22,.45);margin:10px 2px 0;}
+  .extra-note{
+    margin-top:54px;
+    padding-top:40px;
+    border-top:1px solid var(--line);
+    font-size:14px;
+    letter-spacing:.06em;
+    color:rgba(33,29,22,.78);
+  }
+  .extra-note b{color:var(--ink);}
+
+  /* ---------- taste gallery ---------- */
+  .taste{background:var(--paper);}
+  .taste-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-auto-flow:dense;
+    gap:2px;
+  }
+  .taste-card{
+    position:relative;
+    display:block;
+    overflow:hidden;
+    aspect-ratio:1/1;
+  }
+  .taste-card.wide{grid-column:span 2;}
+  .taste-card img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .5s ease;
+  }
+  .taste-card:hover img{transform:scale(1.05);}
+  .taste-card .cap{
+    position:absolute;left:0;right:0;bottom:0;
+    padding:18px 20px 16px;
+    background:linear-gradient(to top, rgba(0,0,0,.72), rgba(0,0,0,0));
+    color:#fff;
+  }
+  .taste-card .cap .brand{
+    font-family:"Poppins",sans-serif;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:.06em;
+    display:block;
+  }
+  .taste-card .cap .desc{
+    font-size:11.5px;
+    letter-spacing:.05em;
+    opacity:.86;
+    display:block;
+    margin-top:4px;
+  }
+  .taste-card .cap .price{
+    font-family:"Poppins",sans-serif;
+    font-size:12px;
+    letter-spacing:.04em;
+    opacity:.8;
+    display:block;
+    margin-top:6px;
+  }
+
+  /* ---------- scenes ---------- */
+  .scenes{
+    background:var(--ink);
+    color:var(--paper);
+    text-align:center;
+  }
+  .scenes .kicker{color:rgba(251,247,238,.5);}
+  .scenes h2{
+    font-size:clamp(26px,3.4vw,38px);
+    font-weight:900;
+    letter-spacing:.1em;
+    margin:16px 0 44px;
+  }
+  .scenes .flow{
+    font-size:clamp(18px,2.6vw,26px);
+    letter-spacing:.1em;
+    line-height:2.3;
+    color:rgba(251,247,238,.92);
+  }
+  .scenes .flow span{margin:0 14px;}
+  .scenes .flow .dot{color:var(--gold);opacity:.7;margin:0 10px;font-size:14px;}
+  .scenes .sub{
+    margin-top:40px;
+    font-size:13.5px;
+    letter-spacing:.07em;
+    color:rgba(251,247,238,.6);
+  }
+
+  /* ---------- reassure ---------- */
+  .reassure .wrap{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+  }
+  .reassure .block{
+    border-top:2px solid var(--ink);
+    padding-top:26px;
+  }
+  .reassure .block .en{
+    font-size:11px;
+    letter-spacing:.24em;
+    color:var(--gold-deep);
+    display:block;
+    margin-bottom:14px;
+  }
+  .reassure .block p{
+    font-size:15.5px;
+    letter-spacing:.06em;
+    margin:0;
+  }
+
+  /* ---------- footer cta ---------- */
+  footer.cta{
+    background:var(--gold);
+    text-align:center;
+    padding:100px 0 90px;
+  }
+  footer.cta h2{
+    font-size:clamp(26px,3.6vw,40px);
+    font-weight:900;
+    letter-spacing:.09em;
+    margin:0 0 34px;
+  }
+  footer.cta .btn{
+    display:inline-block;
+    background:var(--ink);
+    color:var(--paper);
+    padding:19px 46px;
+    font-size:13.5px;
+    letter-spacing:.2em;
+    font-family:"Poppins",sans-serif;
+  }
+  footer.cta .btn:hover{background:var(--red);}
+  footer.cta .shoplogo{margin:56px auto 0;height:30px;opacity:.85;}
+  footer.cta .copyright{
+    margin-top:18px;
+    font-size:11px;
+    letter-spacing:.1em;
+    color:rgba(33,29,22,.55);
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width:860px){
+    section{padding:72px 0;}
+    .fv{padding-top:80px;}
+    .fv-flag{margin-bottom:40px;}
+    .fv-photos{grid-template-columns:1fr 1fr;}
+    .bvc-grid{grid-template-columns:1fr;gap:48px;}
+    .bvc-col:nth-child(2){margin-top:0;}
+    table.budget-table{font-size:13px;}
+    .item-cell img{width:44px;height:44px;}
+    .scroll-hint{display:block;}
+    .taste-grid{grid-template-columns:repeat(2,1fr);}
+    .taste-card.wide{grid-column:span 2;}
+    .reassure .wrap{grid-template-columns:1fr;gap:36px;}
+    .scenes .flow span{margin:0 8px;display:inline-block;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <img src="images/shop-logo.jpg" alt="code℃ by SOMMELIER@GIFT">
+    <span class="tag en">CATALOG GIFT SELECTION GUIDE</span>
+  </div>
+</header>
+
+<div class="top-banner">
+  <img src="images/shop-signboard.jpg" alt="コードシーギフトセレクション">
+</div>
+<div class="top-banner-link">
+  <a href="https://www.rakuten.co.jp/patie/" target="_blank" rel="noopener">コードシーギフトセレクション ショップトップはこちら ▶</a>
+</div>
+
+<section class="fv">
+  <div class="fv-inner">
+    <span class="kicker">Catalog Gift Guide</span>
+    <h1>選ぶ時間も<br>贈り物のうち。</h1>
+    <p class="fv-note">冊子か、カードか。予算は、いくらか。コードシーのカタログギフトを、贈る相手にとって「ちょうどいい」ひとつに絞り込むための、かんたん比較ガイドです。</p>
+    <span class="fv-flag en">最強翌日配送 対応ラインナップより</span>
+  </div>
+  <div class="fv-photos">
+    <img src="images/book-catalog5800.jpg" alt="code℃ プレミアムカタログギフト 冊子タイプ">
+    <img src="images/card-catalog5800_cd.jpg" alt="code℃ プレミアムカタログギフト カード型">
+  </div>
+</section>
+
+<section class="bvc">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Book or Card</span>
+      <h2>まずは、<br>かたちを選ぶ。</h2>
+      <p>コードシーのプレミアムカタログギフトには、冊子タイプとカード型の2つのかたちがあります。中身のグレードはそのままに、渡し方だけが違います。</p>
+    </div>
+
+    <div class="bvc-grid">
+      <div class="bvc-col">
+        <div class="photo"><img src="images/book-catalog10800.jpg" alt="冊子タイプ カタログギフト"></div>
+        <span class="en">01 — BOOK TYPE</span>
+        <h3>冊子タイプ</h3>
+        <p>ページをめくる、あの実感。見慣れているかたちだから、贈る側も選びやすく、受け取った方にも「ちゃんとしたお返し」という気持ちが伝わります。年配の方への内祝いや香典返しにも、安心して選べる定番です。</p>
+      </div>
+      <div class="bvc-col">
+        <div class="photo"><img src="images/card-catalog10800_cd.jpg" alt="カード型 カタログギフト"></div>
+        <span class="en">02 — CARD TYPE</span>
+        <h3>カード型</h3>
+        <p>コンパクトで、軽い。荷物にならないから、手渡しにもぴったりです。届いたあとはスマホでゆっくり、好きな時間にお店を選べます。一人暮らしの方や、身軽に贈りたいときに。</p>
+      </div>
+    </div>
+
+    <div class="bvc-conclusion">
+      <p class="line1">正解は、ひとつじゃありません。</p>
+      <p class="line2">贈る相手を思い浮かべながら、選んでみてください。</p>
+    </div>
+  </div>
+</section>
+
+<section class="budget">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Budget</span>
+      <h2>予算で選ぶ。</h2>
+      <p>2,900円台から10万円コースまで。ほとんどの価格帯に、冊子タイプとカード型の両方をご用意しています。同じ金額でも中身は共通なので、かたちだけで選んでかまいません。</p>
+    </div>
+
+    <div class="table-wrap">
+      <table class="budget-table">
+        <thead>
+          <tr>
+            <th>価格帯</th>
+            <th>冊子タイプ</th>
+            <th>カード型</th>
+          </tr>
+        </thead>
+        <tbody id="budget-tbody"></tbody>
+      </table>
+    </div>
+    <p class="scroll-hint en">SWIPE TO SEE MORE →</p>
+
+    <p class="table-note">※価格は2026年9月時点の割引後の実売価格（税込）です。一部コースは別途送料550円がかかります。最新の価格・在庫は各商品ページでご確認ください。</p>
+
+    <div class="extra-note">
+      <b>もっと特別な組み合わせも。</b><br>
+      カタログギフトに<b>スイーツ（バウムクーヘン）</b>や<b>プリザーブドフラワー</b>を添えたセットもあります。「カタログだけだと少し寂しい」と感じるときに。
+    </div>
+  </div>
+</section>
+
+<section class="taste">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Taste</span>
+      <h2>テイストで選ぶ。</h2>
+      <p>名前を聞いて「あ、あのブランド」と思ってもらえるカタログも。贈る相手の好みがわかっているなら、テイストから選ぶのもひとつの方法です。</p>
+    </div>
+  </div>
+  <div class="taste-grid" id="taste-grid"></div>
+</section>
+
+<section class="scenes">
+  <div class="wrap">
+    <span class="kicker">Any Occasion</span>
+    <h2>シーンは、選びません。</h2>
+    <p class="flow">
+      内祝い<span class="dot">・</span>結婚祝い<span class="dot">・</span>出産祝い<span class="dot">・</span>香典返し<br class="mobile-only">
+      <span class="dot">・</span>新築祝い<span class="dot">・</span>引き出物<span class="dot">・</span>快気祝い<span class="dot">・</span>退職祝い
+    </p>
+    <p class="sub">コードシーのカタログギフトは、どんな贈りものにも馴染みます。迷ったときは、まず予算とかたちから絞り込んでみてください。</p>
+  </div>
+</section>
+
+<section class="reassure">
+  <div class="wrap">
+    <div class="block">
+      <span class="en">SPEED</span>
+      <p>最強翌日配送だから、贈るタイミングを逃しません。「うっかり忘れていた」というときも、慌てなくて大丈夫です。</p>
+    </div>
+    <div class="block">
+      <span class="en">WRAPPING</span>
+      <p>包装も、メッセージカードも、贈り物らしく選べます。在庫のあるラインナップだから、細やかな気配りまで届けられます。</p>
+    </div>
+  </div>
+</section>
+
+<footer class="cta">
+  <div class="wrap">
+    <h2>まずは、予算とかたちから。</h2>
+    <a class="btn" href="https://search.rakuten.co.jp/search/mall/%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%B0%E3%82%AE%E3%83%95%E3%83%88/101381/?filter=dcp&sid=277407" target="_blank" rel="noopener">すべてのカタログギフトを見る</a>
+    <img class="shoplogo" src="images/shop-logo.jpg" alt="code℃ by SOMMELIER@GIFT">
+    <p class="copyright en">CODE℃ GIFT SELECTION</p>
+  </div>
+</footer>
+
+<script>
+const BUDGET = [
+  {price:"2,900円コース", book:{name:"WHT-S-BO",yen:"3,128円",img:"images/book-catalog2800.jpg",url:"https://item.rakuten.co.jp/patie/catalog-selection_bo/"}, card:null},
+  {price:"3,400円コース", book:{name:"WHT-S-BE",yen:"3,413円",img:"images/book-catalog3300.jpg",url:"https://item.rakuten.co.jp/patie/catalog-selection_be/"}, card:{name:"S-BE",yen:"3,413円",img:"images/card-catalog3300_cd.jpg",url:"https://item.rakuten.co.jp/patie/cat-premium-002/"}},
+  {price:"3,900円コース", book:{name:"WHT-S-CO",yen:"3,785円",img:"images/book-catalog3800.jpg",url:"https://item.rakuten.co.jp/patie/catalog-selection_co/"}, card:null},
+  {price:"4,400円コース", book:{name:"WHT-S-CE",yen:"4,172円",img:"images/book-catalog4300.jpg",url:"https://item.rakuten.co.jp/patie/catalog-selection_ce/"}, card:{name:"S-CE",yen:"4,172円",img:"images/card-catalog4300_cd.jpg",url:"https://item.rakuten.co.jp/patie/cat-premium-004/"}},
+  {price:"4,900円コース", book:{name:"WHT-S-DO",yen:"4,457円",img:"images/book-catalog4800.jpg",url:"https://item.rakuten.co.jp/patie/catalog-selection_do/"}, card:{name:"S-DO",yen:"4,457円",img:"images/card-catalog4800_cd.jpg",url:"https://search.rakuten.co.jp/search/mall/S-DO/277407/"}},
+  {price:"5,000〜5,900円コース", book:{name:"WHT-S-EO",yen:"4,660円",img:"images/book-catalog5800.jpg",url:"https://item.rakuten.co.jp/patie/catalog-selection_eo/"}, card:{name:"S-EO",yen:"4,760円",img:"images/card-catalog5800_cd.jpg",url:"https://item.rakuten.co.jp/patie/cat-premium-006/"}},
+  {price:"8,900円コース", book:{name:"WHT-S-HO",yen:"7,160円",img:"images/book-catalog8800.jpg",url:"https://item.rakuten.co.jp/patie/catalog-selection_ge/"}, card:{name:"S-HO",yen:"7,160円",img:"images/card-catalog8800_cd.jpg",url:"https://item.rakuten.co.jp/patie/cat-premium-007/"}},
+  {price:"10,900円コース", book:{name:"WHT-S-AOO",yen:"8,140円",img:"images/book-catalog10800.jpg",url:"https://item.rakuten.co.jp/patie/catalog-selection_aoo/"}, card:{name:"S-AOO",yen:"8,140円",img:"images/card-catalog10800_cd.jpg",url:"https://item.rakuten.co.jp/patie/cat-premium-008/"}},
+  {price:"15,900円コース", book:{name:"WHT-S-AEO",yen:"11,960円",img:"images/book-catalog15800.jpg",url:"https://item.rakuten.co.jp/patie/catalog-selection_aeo/"}, card:{name:"S-AEO",yen:"11,960円",img:"images/card-catalog15800_cd.jpg",url:"https://item.rakuten.co.jp/patie/cat-premium-009/"}},
+  {price:"20,000円コース", book:{name:"WHT-S-BOO",yen:"15,360円",img:"images/book-catalog20800.jpg",url:"https://item.rakuten.co.jp/patie/catalog-selection_boo/"}, card:{name:"S-BOO",yen:"15,360円",img:"images/card-catalog20800_cd.jpg",url:"https://item.rakuten.co.jp/patie/cat-premium-010/"}},
+  {price:"25,900円コース", book:{name:"WHT-S-BEO",yen:"19,060円",img:"images/book-catalog25800.jpg",url:"https://item.rakuten.co.jp/patie/catalog-selection_beo/"}, card:null},
+  {price:"30,000円コース", book:{name:"WHT-S-COO",yen:"23,060円",img:"images/book-catalog30800.jpg",url:"https://item.rakuten.co.jp/patie/catalog-selection_coo/"}, card:{name:"S-COO",yen:"23,060円",img:"images/card-catalog30800_cd.jpg",url:"https://item.rakuten.co.jp/patie/cat-premium-012/"}},
+  {price:"50,900円コース", book:{name:"WHT-S-VOO",yen:"35,960円",img:"images/book-catalog50800.jpg",url:"https://item.rakuten.co.jp/patie/catalog-selection_voo/"}, card:null},
+  {price:"100,900円コース", book:{name:"WHT-S-XOO",yen:"68,160円",img:"images/book-catalog100800.jpg",url:"https://item.rakuten.co.jp/patie/catalog-selection_xoo/"}, card:null},
+];
+
+function cell(item){
+  if(!item) return '<span class="item-cell empty">この価格帯は冊子タイプのみ</span>';
+  return `<a class="item-cell" href="${item.url}" target="_blank" rel="noopener">
+    <img src="${item.img}" alt="${item.name}">
+    <span class="meta"><span class="name en">${item.name}</span><span class="yen en">${item.yen}</span></span>
+  </a>`;
+}
+
+document.getElementById('budget-tbody').innerHTML = BUDGET.map(row => `
+  <tr>
+    <td class="price-col en">${row.price}</td>
+    <td>${cell(row.book)}</td>
+    <td>${cell(row.card)}</td>
+  </tr>
+`).join('');
+
+const TASTE = [
+  {brand:"DEAN & DELUCA", desc:"グルメ・冊子/カード選べる", price:"4,180円〜", img:"images/brand-deandeluca.jpg", url:"https://item.rakuten.co.jp/patie/cat-dnd-003/", wide:true},
+  {brand:"THE RED", desc:"注目ブランド満載・カード型", price:"6,490円〜", img:"images/brand-thered.jpg", url:"https://item.rakuten.co.jp/patie/cat-red-001/"},
+  {brand:"tower", desc:"山崎実業・雑貨カード型", price:"3,630円〜", img:"images/brand-tower.jpg", url:"https://item.rakuten.co.jp/patie/cat-tower-001/"},
+  {brand:"JILLSTUART", desc:"コスメ・カード型", price:"4,290円〜", img:"images/brand-jillstuart.jpg", url:"https://item.rakuten.co.jp/patie/cat-jill-002/"},
+  {brand:"ANA's FRESH SELECTION", desc:"グルメ・カード型", price:"5,500円〜", img:"images/brand-ana.jpg", url:"https://item.rakuten.co.jp/patie/cat-anacard-002/"},
+  {brand:"高島屋 ローズガーデン", desc:"百貨店セレクト・冊子", price:"3,190円〜", img:"images/brand-takashimaya.jpg", url:"https://item.rakuten.co.jp/patie/cat-rose-001/", wide:true},
+  {brand:"ディズニー SMILE", desc:"リンベル・冊子", price:"4,290円〜", img:"images/brand-disney-smile.jpg", url:"https://item.rakuten.co.jp/patie/cat_disney_001/"},
+  {brand:"T-fal", desc:"家電・実用派カード型", price:"11,880円〜", img:"images/brand-tfal.jpg", url:"https://item.rakuten.co.jp/patie/cat-tfal-003/"},
+  {brand:"生活の木", desc:"アロマ・カード型", price:"5,280円〜", img:"images/brand-tol.jpg", url:"https://item.rakuten.co.jp/patie/cat-tol-003/"},
+  {brand:"Presentage", desc:"リンベル・総合冊子", price:"3,190円〜", img:"images/brand-presentage.jpg", url:"https://item.rakuten.co.jp/patie/cat-prztg-006/"},
+  {brand:"Cosme Kitchen & Biople", desc:"コスメ・カード型", price:"5,500円〜", img:"images/brand-cosmekitchen.jpg", url:"https://item.rakuten.co.jp/patie/cat-cosmekitchen-001/"},
+  {brand:"栗原はるみ", desc:"監修セレクト・カード型", price:"11,880円〜", img:"images/brand-kurihara.jpg", url:"https://item.rakuten.co.jp/patie/cat-krhr-003/"},
+  {brand:"ILLUMS", desc:"北欧雑貨・冊子", price:"11,990円〜", img:"images/brand-illums.jpg", url:"https://item.rakuten.co.jp/patie/illums_cat_003/"},
+  {brand:"銀座千疋屋", desc:"ようかん＋カタログ", price:"4,280円〜", img:"images/brand-senbikiya.jpg", url:"https://item.rakuten.co.jp/patie/cat-sweets-set-005/"},
+];
+
+document.getElementById('taste-grid').innerHTML = TASTE.map(t => `
+  <a class="taste-card${t.wide?' wide':''}" href="${t.url}" target="_blank" rel="noopener">
+    <img src="${t.img}" alt="${t.brand}">
+    <span class="cap">
+      <span class="brand">${t.brand}</span>
+      <span class="desc">${t.desc}</span>
+      <span class="price en">${t.price}</span>
+    </span>
+  </a>
+`).join('');
+</script>
+
+</body>
+</html>
