@@ -529,6 +529,54 @@
     font-variant-numeric:tabular-nums;
   }
 
+  /* ---------- review ranking ---------- */
+  .review-rank{background:var(--paper);}
+  .rank-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:22px 16px;
+  }
+  .rank-card{display:flex;flex-direction:column;gap:8px;}
+  .rank-card .photo{
+    position:relative;
+    aspect-ratio:1/1;
+    overflow:hidden;
+  }
+  .rank-card .photo img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .4s ease;
+  }
+  .rank-card:hover .photo img{transform:scale(1.05);}
+  .rank-card .badge{
+    position:absolute;
+    bottom:0;right:0;
+    background:var(--ink);
+    color:var(--paper);
+    font-family:"Jost",sans-serif;
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.04em;
+    padding:5px 11px;
+  }
+  .rank-card .badge.top3{background:var(--red);}
+  .rank-card .name{
+    font-size:13px;
+    letter-spacing:.03em;
+    color:rgba(33,29,22,.85);
+  }
+  .rank-card .review{
+    font-family:"Jost",sans-serif;
+    font-size:11px;
+    letter-spacing:.02em;
+    color:var(--gold-deep);
+  }
+  .rank-card .yen{
+    font-family:"Jost",sans-serif;
+    font-weight:600;
+    font-size:16px;
+    font-variant-numeric:tabular-nums;
+  }
+
   /* ---------- footer cta ---------- */
   footer.cta{
     background:var(--gold);
@@ -573,6 +621,7 @@
     }
     .taste-grid{grid-template-columns:repeat(2,1fr);}
     .genre-list{grid-template-columns:repeat(2,1fr);}
+    .rank-grid{grid-template-columns:repeat(2,1fr);}
     .taste-card.wide{grid-column:span 2;}
     .reassure .wrap{grid-template-columns:1fr;gap:36px;}
     .scenes .flow span{margin:0 8px;display:inline-block;}
@@ -804,6 +853,17 @@
   </div>
 </section>
 
+<section class="review-rank">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">Review Ranking</span>
+      <h2>口コミの多いカタログギフトから<br>選ぶのもおすすめです。</h2>
+      <p>口コミの多いトップ10をご紹介！(店内のカタログギフトより)</p>
+    </div>
+    <div class="rank-grid" id="rank-grid"></div>
+  </div>
+</section>
+
 <footer class="cta">
   <div class="wrap">
     <h2>「ちょうどいい」を、見つけよう。</h2>
@@ -947,6 +1007,31 @@ document.getElementById('genre-groups').innerHTML = GENRES.map(g => `
       `).join('')}
     </div>
   </div>
+`).join('');
+
+const RANKING = [
+  {rank:1, name:"5,000円コース", review:"1,501件", yen:"4,660円", img:"images/book-catalog5800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_eo/"},
+  {rank:2, name:"10,900円コース", review:"554件", yen:"8,140円", img:"images/book-catalog10800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_aoo/"},
+  {rank:3, name:"15,900円コース", review:"528件", yen:"11,960円", img:"images/book-catalog15800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_aeo/"},
+  {rank:4, name:"4,900円コース", review:"284件", yen:"4,457円", img:"images/book-catalog4800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_do/"},
+  {rank:5, name:"8,900円コース", review:"276件", yen:"7,160円", img:"images/book-catalog8800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_ge/"},
+  {rank:6, name:"2,900円コース", review:"226件", yen:"3,128円", img:"images/book-catalog2800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_bo/"},
+  {rank:7, name:"3,400円コース", review:"212件", yen:"3,413円", img:"images/book-catalog3300.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_be/"},
+  {rank:8, name:"20,000円コース", review:"197件", yen:"15,360円", img:"images/book-catalog20800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_boo/"},
+  {rank:9, name:"3,900円コース", review:"192件", yen:"3,785円", img:"images/book-catalog3800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_co/"},
+  {rank:10, name:"4,400円コース", review:"155件", yen:"4,172円", img:"images/book-catalog4300.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_ce/"},
+];
+
+document.getElementById('rank-grid').innerHTML = RANKING.map(r => `
+  <a class="rank-card" href="${r.url}" target="_blank" rel="noopener">
+    <span class="photo">
+      <span class="badge${r.rank<=3?' top3':''} en">No.${r.rank}</span>
+      <img src="${r.img}" alt="code℃ プレミアムカタログギフト ${r.name}">
+    </span>
+    <span class="name">プレミアムカタログギフト ${r.name}</span>
+    <span class="review en">口コミ ${r.review}</span>
+    <span class="yen en">${r.yen}</span>
+  </a>
 `).join('');
 </script>
 
