@@ -448,13 +448,31 @@
   .genre-group{margin-top:44px;}
   .genre-group:first-of-type{margin-top:0;}
   .genre-group h4{
-    font-family:"Jost",sans-serif;
-    font-size:11px;
-    letter-spacing:.2em;
-    text-transform:uppercase;
-    color:rgba(33,29,22,.5);
-    font-weight:600;
-    margin:0 0 14px;
+    font-size:21px;
+    font-weight:700;
+    letter-spacing:.06em;
+    color:var(--ink);
+    margin:0 0 16px;
+  }
+  .genre-comment{
+    position:relative;
+    display:inline-block;
+    background:var(--ink);
+    color:var(--paper);
+    font-size:13.5px;
+    letter-spacing:.04em;
+    padding:11px 18px;
+    margin:0 0 26px;
+  }
+  .genre-comment::after{
+    content:"";
+    position:absolute;
+    left:22px;
+    bottom:-8px;
+    width:0;height:0;
+    border-left:8px solid transparent;
+    border-right:8px solid transparent;
+    border-top:8px solid var(--ink);
   }
   .genre-list{
     display:grid;
@@ -473,7 +491,7 @@
   }
   .genre-row:hover img{transform:scale(1.05);}
   .genre-row .name{
-    font-size:12.5px;
+    font-size:13.5px;
     letter-spacing:.03em;
     line-height:1.5;
     color:rgba(33,29,22,.85);
@@ -481,7 +499,7 @@
   .genre-row .yen{
     font-family:"Jost",sans-serif;
     font-weight:600;
-    font-size:15px;
+    font-size:16.5px;
     white-space:nowrap;
     font-variant-numeric:tabular-nums;
   }
@@ -829,6 +847,7 @@ document.getElementById('taste-grid').innerHTML = TASTE.map(t => `
 const GENRES = [
   {
     group:"体験型ギフト",
+    comment:"モノよりも、思い出を贈りたい方に。",
     items:[
       {name:"SOW EXPERIENCE FOR2ギフト(GREEN)", yen:"12,485円", img:"images/genre-sow-for2.jpg", url:"https://item.rakuten.co.jp/patie/cat-sow-00001/"},
       {name:"SOW EXPERIENCE カフェチケットTOKYO", yen:"4,455円", img:"images/genre-sow-cafe.jpg", url:"https://item.rakuten.co.jp/patie/cat-sow-00013/"},
@@ -838,6 +857,7 @@ const GENRES = [
   },
   {
     group:"グルメカタログ",
+    comment:"美味しいものを、とことん贈りたい方に。",
     items:[
       {name:"選べる国産和牛 健勝(けんしょう)", yen:"5,500円", img:"images/genre-wagyu.jpg", url:"https://item.rakuten.co.jp/patie/cat_wagyu_001/"},
       {name:"美味満腹のdancyu CDコース", yen:"23,320円", img:"images/genre-dancyu.jpg", url:"https://item.rakuten.co.jp/patie/dancyu_004/"},
@@ -848,6 +868,7 @@ const GENRES = [
   },
   {
     group:"香典返し専門「最上」",
+    comment:"香典返しの作法を、きちんと踏まえたい方に。",
     items:[
       {name:"好天(こうてん)", yen:"4,730円", img:"images/genre-saijo.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection-wa_4500/"},
       {name:"晴明(せいめい)", yen:"5,410円", img:"images/genre-saijo.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection-wa_5500/"},
@@ -862,6 +883,7 @@ const GENRES = [
 document.getElementById('genre-groups').innerHTML = GENRES.map(g => `
   <div class="genre-group">
     <h4>${g.group}</h4>
+    <p class="genre-comment">${g.comment}</p>
     <div class="genre-list">
       ${g.items.map(it => `
         <a class="genre-row" href="${it.url}" target="_blank" rel="noopener">
