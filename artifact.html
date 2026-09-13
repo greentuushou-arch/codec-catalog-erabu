@@ -134,11 +134,36 @@
     align-items:start;
   }
   .bvc-col .photo{
+    display:block;
     aspect-ratio:1/1;
     overflow:hidden;
     margin-bottom:28px;
   }
-  .bvc-col .photo img{width:100%;height:100%;object-fit:cover;}
+  .bvc-col .photo img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .4s ease;
+  }
+  .bvc-col .photo:hover img{transform:scale(1.04);}
+  .reco-mini{
+    display:flex;
+    gap:14px;
+    margin-top:22px;
+  }
+  .reco-mini a{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    width:76px;
+  }
+  .reco-mini img{
+    width:76px;height:76px;object-fit:cover;
+  }
+  .reco-mini span{
+    font-size:10.5px;
+    letter-spacing:.02em;
+    line-height:1.4;
+    color:rgba(33,29,22,.7);
+  }
   .bvc-col .en{
     font-size:12px;
     letter-spacing:.28em;
@@ -575,8 +600,8 @@
 <section class="fv">
   <div class="fv-inner">
     <span class="kicker">Catalog Gift Guide</span>
-    <h1>「ちょうどいい」は<br>お相手で決まる</h1>
-    <p class="fv-note">カタログギフトは、味気なくない。大切なのは、お返しなのか、プレゼントなのか。贈るお相手を思い浮かべながら、かんたんに絞り込めるガイドです。</p>
+    <h1>カタログギフトは、<br>味気なくない。</h1>
+    <p class="fv-note">大切なのは、お返しなのか、プレゼントなのか。贈るお相手を思い浮かべながら、かんたんに絞り込めるガイドです。</p>
   </div>
   <div class="fv-photos">
     <img src="images/fv-book-new.jpg" alt="code℃ プレミアムカタログギフト 冊子タイプ">
@@ -594,17 +619,31 @@
 
     <div class="bvc-grid">
       <div class="bvc-col">
-        <div class="photo"><img src="images/fv-book-new.jpg" alt="お返しにおすすめのカタログギフト"></div>
+        <a class="photo" href="https://item.rakuten.co.jp/patie/catalog-selection_eo/" target="_blank" rel="noopener"><img src="images/fv-book-new.jpg" alt="お返しにおすすめのカタログギフト"></a>
         <span class="en">01 — RETURN GIFT</span>
         <h3>お返し</h3>
         <div class="bvc-reco">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
           <span>内祝い・香典返しなど、失敗したくない方に</span>
         </div>
-        <p>内祝いや香典返しなど、目上の方や幅広い年代に贈る「お返し」なら、総合カタログのcode℃プレミアムカタログギフトが万能です。お相手の趣味や好みが分からなくても、誰に贈っても安心して選べます。</p>
+        <p>内祝いや香典返しなど、目上の方や幅広い年代に贈る「お返し」なら、総合カタログのcode℃プレミアムカタログギフトやグルメカタログギフトがおすすめです。お相手の趣味や好みが分からなくても、誰に贈っても安心して選べます。</p>
+        <div class="reco-mini">
+          <a href="https://item.rakuten.co.jp/patie/catalog-selection_eo/" target="_blank" rel="noopener">
+            <img src="images/book-catalog5800.jpg" alt="プレミアムカタログギフト 冊子 5,000円コース">
+            <span>冊子 5,000円コース</span>
+          </a>
+          <a href="https://item.rakuten.co.jp/patie/cat-premium-006/" target="_blank" rel="noopener">
+            <img src="images/card-catalog5800_cd.jpg" alt="プレミアムカタログギフト カード 5,000円コース">
+            <span>カード 5,000円コース</span>
+          </a>
+          <a href="https://search.rakuten.co.jp/search/mall/%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%B0%E3%82%AE%E3%83%95%E3%83%88%E3%80%80%E3%82%B0%E3%83%AB%E3%83%A1/566732/tg1013760/?filter=dcp&sid=277407" target="_blank" rel="noopener">
+            <img src="images/genre-wagyu.jpg" alt="みんな嬉しいグルメカタログギフト">
+            <span>みんな嬉しいグルメカタログギフト</span>
+          </a>
+        </div>
       </div>
       <div class="bvc-col">
-        <div class="photo"><img src="images/brand-thered.jpg" alt="プレゼントにおすすめのカタログギフト"></div>
+        <a class="photo" href="https://item.rakuten.co.jp/patie/cat-red-001/" target="_blank" rel="noopener"><img src="images/brand-thered.jpg" alt="プレゼントにおすすめのカタログギフト"></a>
         <span class="en">02 — PRESENT</span>
         <h3>プレゼント</h3>
         <div class="bvc-reco">
@@ -612,11 +651,21 @@
           <span>誕生日・記念日など、気持ちを伝えたい方に</span>
         </div>
         <p>誕生日、記念日、クリスマス、母の日・父の日、出産祝いなど「贈るプレゼント」なら、プレミアムカタログギフトはもちろん、あの人の好きなブランドに寄せた特化型カタログもおすすめです。「私のために選んでくれた」が伝わります。</p>
+        <div class="reco-mini">
+          <a href="https://item.rakuten.co.jp/patie/cat-dnd-003/" target="_blank" rel="noopener">
+            <img src="images/brand-deandeluca.jpg" alt="DEAN & DELUCA カタログギフト">
+            <span>DEAN & DELUCA</span>
+          </a>
+          <a href="https://search.rakuten.co.jp/search/mall/%E3%82%AB%E3%82%BF%E3%83%AD%E3%82%B0%E3%82%AE%E3%83%95%E3%83%88%E3%80%80%E4%BD%93%E9%A8%93/-/tg1013763/?sid=277407" target="_blank" rel="noopener">
+            <img src="images/genre-sow-for2.jpg" alt="話題の体験型カタログ">
+            <span>話題の体験型カタログ</span>
+          </a>
+        </div>
       </div>
     </div>
 
     <div class="bvc-conclusion">
-      <p class="line1">カタログギフトは、味気なくない。</p>
+      <p class="line1">「ちょうどいい」は、お相手で決まる。</p>
       <p class="line2">包装もメッセージカードもかわいく選べるから、気持ちはちゃんと伝わります。この先は、かたちと予算、テイストでもう少しだけ絞り込みましょう。</p>
     </div>
   </div>
