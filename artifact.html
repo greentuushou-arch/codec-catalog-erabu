@@ -437,6 +437,42 @@
     margin:0;
   }
 
+  /* ---------- other genres ---------- */
+  .other-genres{background:var(--paper-deep);}
+  .genre-group{margin-top:44px;}
+  .genre-group:first-of-type{margin-top:0;}
+  .genre-group h4{
+    font-family:"Jost",sans-serif;
+    font-size:11px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:rgba(33,29,22,.5);
+    font-weight:600;
+    margin:0 0 14px;
+  }
+  .genre-list{display:flex;flex-direction:column;}
+  .genre-row{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .genre-row img{width:48px;height:48px;object-fit:cover;flex:none;}
+  .genre-row .name{
+    flex:1;
+    font-size:13.5px;
+    letter-spacing:.03em;
+    color:rgba(33,29,22,.85);
+  }
+  .genre-row .yen{
+    font-family:"Jost",sans-serif;
+    font-weight:600;
+    font-size:15px;
+    white-space:nowrap;
+    font-variant-numeric:tabular-nums;
+  }
+
   /* ---------- footer cta ---------- */
   footer.cta{
     background:var(--gold);
@@ -669,6 +705,17 @@
   </div>
 </section>
 
+<section class="other-genres">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="kicker">More Genres</span>
+      <h2>ほかにも、<br>こんなジャンルが。</h2>
+      <p>カタログギフト以外にも、最強翌日配送に対応したグルメ・体験・香典返し専門のカタログがあります。気になる方はこちらもどうぞ。</p>
+    </div>
+    <div id="genre-groups"></div>
+  </div>
+</section>
+
 <footer class="cta">
   <div class="wrap">
     <h2>まずは、予算とかたちから。</h2>
@@ -760,5 +807,53 @@ document.getElementById('taste-grid').innerHTML = TASTE.map(t => `
       <span class="price en">${t.price}</span>
     </span>
   </a>
+`).join('');
+
+const GENRES = [
+  {
+    group:"香典返し専門「最上」",
+    items:[
+      {name:"好天(こうてん)", yen:"4,730円", img:"images/genre-saijo.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection-wa_4500/"},
+      {name:"晴明(せいめい)", yen:"5,410円", img:"images/genre-saijo.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection-wa_5500/"},
+      {name:"早天(そうてん)", yen:"4,020円", img:"images/genre-saijo.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection-wa_3500/"},
+      {name:"暁紅(ぎょうこう)", yen:"3,590円", img:"images/genre-saijo.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection-wa_3000/"},
+      {name:"夕晴れ(ゆうばれ)", yen:"13,090円", img:"images/genre-saijo.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection-wa_15500/"},
+      {name:"夕月夜(ゆうづきよ)", yen:"16,980円", img:"images/genre-saijo.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection-wa_20500/"},
+    ]
+  },
+  {
+    group:"体験型ギフト",
+    items:[
+      {name:"SOW EXPERIENCE FOR2ギフト(GREEN)", yen:"12,485円", img:"images/genre-sow-for2.jpg", url:"https://item.rakuten.co.jp/patie/cat-sow-00001/"},
+      {name:"SOW EXPERIENCE カフェチケットTOKYO", yen:"4,455円", img:"images/genre-sow-cafe.jpg", url:"https://item.rakuten.co.jp/patie/cat-sow-00013/"},
+      {name:"JTBたびもの撰華 楓(かえで)", yen:"6,490円", img:"images/genre-jtb.jpg", url:"https://item.rakuten.co.jp/patie/jtb-002/"},
+      {name:"EXETIME YELLOW", yen:"22,660円", img:"images/genre-exetime.jpg", url:"https://item.rakuten.co.jp/patie/cat-exe-008/"},
+    ]
+  },
+  {
+    group:"グルメカタログ",
+    items:[
+      {name:"選べる国産和牛 健勝(けんしょう)", yen:"5,500円", img:"images/genre-wagyu.jpg", url:"https://item.rakuten.co.jp/patie/cat_wagyu_001/"},
+      {name:"美味満腹のdancyu CDコース", yen:"23,320円", img:"images/genre-dancyu.jpg", url:"https://item.rakuten.co.jp/patie/dancyu_004/"},
+      {name:"やさしいごちそう 青いブルーベリー", yen:"2,420円", img:"images/genre-yasagochi.jpg", url:"https://item.rakuten.co.jp/patie/ad-yasagochi_2500/"},
+      {name:"OCEAN&TERRE GOURMET DELICIOUS", yen:"12,100円", img:"images/genre-oceanterre.jpg", url:"https://item.rakuten.co.jp/patie/cat-oceant-004/"},
+      {name:"47club 郷コース", yen:"11,000円", img:"images/genre-47club.jpg", url:"https://item.rakuten.co.jp/patie/cat_47club_003/"},
+    ]
+  },
+];
+
+document.getElementById('genre-groups').innerHTML = GENRES.map(g => `
+  <div class="genre-group">
+    <h4>${g.group}</h4>
+    <div class="genre-list">
+      ${g.items.map(it => `
+        <a class="genre-row" href="${it.url}" target="_blank" rel="noopener">
+          <img src="${it.img}" alt="${it.name}">
+          <span class="name">${it.name}</span>
+          <span class="yen en">${it.yen}</span>
+        </a>
+      `).join('')}
+    </div>
+  </div>
 `).join('');
 </script>
