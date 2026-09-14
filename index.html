@@ -1015,25 +1015,25 @@ document.getElementById('genre-groups').innerHTML = GENRES.map(g => `
 `).join('');
 
 const RANKING = [
-  {rank:1, name:"5,000円コース", review:"1,501件", yen:"4,660円", img:"images/book-catalog5800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_eo/"},
-  {rank:2, name:"10,900円コース", review:"554件", yen:"8,140円", img:"images/book-catalog10800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_aoo/"},
-  {rank:3, name:"15,900円コース", review:"528件", yen:"11,960円", img:"images/book-catalog15800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_aeo/"},
-  {rank:4, name:"4,900円コース", review:"284件", yen:"4,457円", img:"images/book-catalog4800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_do/"},
-  {rank:5, name:"8,900円コース", review:"276件", yen:"7,160円", img:"images/book-catalog8800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_ge/"},
-  {rank:6, name:"2,900円コース", review:"226件", yen:"3,128円", img:"images/book-catalog2800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_bo/"},
-  {rank:7, name:"3,400円コース", review:"212件", yen:"3,413円", img:"images/book-catalog3300.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_be/"},
-  {rank:8, name:"20,000円コース", review:"197件", yen:"15,360円", img:"images/book-catalog20800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_boo/"},
-  {rank:9, name:"3,900円コース", review:"192件", yen:"3,785円", img:"images/book-catalog3800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_co/"},
-  {rank:10, name:"4,400円コース", review:"155件", yen:"4,172円", img:"images/book-catalog4300.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_ce/"},
+  {rank:1, label:"プレミアムカタログギフト 5,000円コース", review:"1,501件", yen:"4,660円", img:"images/book-catalog5800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_eo/"},
+  {rank:2, label:"プレミアムカタログギフト 10,900円コース", review:"554件", yen:"8,140円", img:"images/book-catalog10800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_aoo/"},
+  {rank:3, label:"プレミアムカタログギフト 15,900円コース", review:"528件", yen:"11,960円", img:"images/book-catalog15800.jpg", url:"https://item.rakuten.co.jp/patie/catalog-selection_aeo/"},
+  {rank:4, label:"tower カード型 vol.3", review:"24件", yen:"4,180円", img:"images/rank-tower-vol3.jpg", url:"https://item.rakuten.co.jp/patie/cat-tower-003/"},
+  {rank:5, label:"tower カード型 vol.5", review:"24件", yen:"5,280円", img:"images/rank-tower-vol5.jpg", url:"https://item.rakuten.co.jp/patie/cat-tower-005/"},
+  {rank:6, label:"プレミアムカタログギフト カード型 10,900円コース", review:"20件", yen:"8,140円", img:"images/card-catalog10800_cd.jpg", url:"https://item.rakuten.co.jp/patie/cat-premium-008/"},
+  {rank:7, label:"プレミアムカタログギフト カード型 5,900円コース", review:"18件", yen:"4,760円", img:"images/card-catalog5800_cd.jpg", url:"https://item.rakuten.co.jp/patie/cat-premium-006/"},
+  {rank:8, label:"ILLUMS(北欧雑貨) copenhagen", review:"16件", yen:"11,990円", img:"images/rank-illums-copenhagen.jpg", url:"https://item.rakuten.co.jp/patie/illums_cat_003/"},
+  {rank:9, label:"プレミアムカタログギフト カード型 15,900円コース", review:"14件", yen:"11,960円", img:"images/card-catalog15800_cd.jpg", url:"https://item.rakuten.co.jp/patie/cat-premium-009/"},
+  {rank:10, label:"DEAN & DELUCA", review:"12件", yen:"4,180円〜", img:"images/brand-deandeluca.jpg", url:"https://item.rakuten.co.jp/patie/cat-dnd-003/"},
 ];
 
 document.getElementById('rank-grid').innerHTML = RANKING.map(r => `
   <a class="rank-card" href="${r.url}" target="_blank" rel="noopener">
     <span class="photo">
       <span class="badge${r.rank<=3?' top3':''} en">No.${r.rank}</span>
-      <img src="${r.img}" alt="code℃ プレミアムカタログギフト ${r.name}">
+      <img src="${r.img}" alt="${r.label}">
     </span>
-    <span class="name">プレミアムカタログギフト ${r.name}</span>
+    <span class="name">${r.label}</span>
     <span class="review en">口コミ ${r.review}</span>
     <span class="yen en">${r.yen}</span>
   </a>
